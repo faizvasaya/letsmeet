@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <div class="panel panel-default">
+            <div class="panel panel-default" ng-controller="LoginController as loginCtrl">
                 <div class="panel-heading">
                     <h4>Login To Your Account</h4>
                 </div>
-                <div class="panel-body" ng-controller="LoginController as loginCtrl">
+                <div class="panel-body">
                     <form name="loginForm" novalidate>
                         <div class="form-group">
                             <label for="username"> Username </label>
@@ -33,7 +33,7 @@
                         <div class="alert alert-danger" ng-show="loginForm.password.$error.maxlength">
                             Password too long
                         </div>
-                        <button type="button" class="btn btn-success" ng-disabled="loginForm.$invalid">
+                        <button type="button" class="btn btn-success" ng-disabled="loginForm.$invalid" ng-click="loginCtrl.redirect()">
                             <span class="glyphicon glyphicon-lock"></span>
                             Login 
                         </button>
@@ -42,14 +42,14 @@
                 <div class="panel-footer">
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="#" class="btn btn-block btn-social btn-md btn-facebook">
+                            <button ng-click="loginCtrl.authenticateUsingFacebook()" class="btn btn-block btn-social btn-md btn-facebook">
                                     <span class="fa fa-facebook"></span> Sign in with Facebook
-                                </a>
+                            </button>
                         </div>
                         <div class="col-md-6">
-                            <a href="#" class="btn btn-block btn-social btn-md btn-google">
+                            <button ng-click="loginCtrl.authenticateUsingGoogle()" class="btn btn-block btn-social btn-md btn-google">
                                     <span class="fa fa-google"></span> Sign in with Google
-                                </a>
+                            </button>
                         </div>
                     </div>
                 </div>
