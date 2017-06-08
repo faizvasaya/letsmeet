@@ -27,7 +27,7 @@
                 name: 'Blogs'
             },
             {
-                link: '#',
+                link: '#!login',
                 name: 'Login'
             },
             {
