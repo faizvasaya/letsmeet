@@ -4,13 +4,19 @@
 <head>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
   <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <title>Lets 'mEEt'</title>
 </head>
 
 <body>
   <navbar></navbar>
-  <script src="app.js"></script>
+
+  <ng-view></ng-view>
+
+  <script src="app.module.js"></script>
+  <script src="routes/app.route.js"></script>
   <script src="navbar/navbar.directive.js"></script>
 </body>
+
 </html>
