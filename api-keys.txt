@@ -1,0 +1,3 @@
+Google oAuth2 client ID:- 860273810608-lk23nn2i1icnjle4481sdrldakq9qbhm.apps.googleusercontent.com
+Google oAuth2 client secret:- 4tbxbN2NDNjf5ALmQUGGuTXz
+
