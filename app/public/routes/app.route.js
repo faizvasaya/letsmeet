@@ -13,6 +13,8 @@
             templateUrl: 'contactus.html'
         }).when('/login', {
             templateUrl: 'login/login.html'
+        }).when('/homepage',{
+            templateUrl: 'homepage/homepage.html'
         });
     }
 })();
