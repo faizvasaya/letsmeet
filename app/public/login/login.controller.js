@@ -6,6 +6,8 @@
     LoginController.$inject = ['$scope'];
 
     function LoginController($scope) {
-
+        var vm = this;
+        vm.username = '';
+        vm.password = '';
     }
 })();
