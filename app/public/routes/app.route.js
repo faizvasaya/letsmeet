@@ -11,6 +11,8 @@
     function routeConfigurator($routeProvider) {
         $routeProvider.when('/contactus', {
             templateUrl: 'contactus.html'
+        }).when('/login', {
+            templateUrl: 'login/login.html'
         });
     }
 })();
