@@ -31,7 +31,11 @@
                 name: 'Login'
             },
             {
-                link: '#!contactus',
+                link: '#!signup',
+                name: 'Signup'
+            },
+            {
+                link: '#',
                 name: 'Contactus'
             }
         ];

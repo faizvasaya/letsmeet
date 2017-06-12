@@ -9,12 +9,12 @@
     app.config(routeConfigurator);
 
     function routeConfigurator($routeProvider) {
-        $routeProvider.when('/contactus', {
-            templateUrl: 'contactus.html'
+        $routeProvider.when('/', {
+            templateUrl: 'app/homepage/homepage.html'
         }).when('/login', {
-            templateUrl: 'login/login.html'
-        }).when('/homepage',{
-            templateUrl: 'homepage/homepage.html'
+            templateUrl: 'app/login/login.html'
+        }).when('/signup', {
+            templateUrl: 'app/signup/signup.html'
         });
     }
 })();
