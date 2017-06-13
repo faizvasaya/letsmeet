@@ -8,36 +8,35 @@
                 <div class="panel-body">
                     <form name="loginForm" novalidate>
                         <div class="form-group">
-                            <label for="username"> Username </label>
-                            <input type="text" class="form-control" name="username" ng-model="loginCtrl.username" required ng-minlength="3" ng-maxlength="8">
+                            <label for="email"> Email </label>
+                            <input type="email" class="form-control" name="email" ng-model="loginCtrl.data.email" required>
                         </div>
-                        <div class="alert alert-danger help-block" ng-show="loginForm.username.$error.required && !loginForm.username.$pristine">
-                            Username required.
+                        <div class="alert alert-danger help-block" ng-show="loginForm.email.$error.required && !loginForm.email.$pristine">
+                            Email required.
                         </div>
-                        <div class="alert alert-danger" ng-show="loginForm.username.$error.minlength">
-                            Username too short
-                        </div>
-                        <div class="alert alert-danger" ng-show="loginForm.username.$error.maxlength">
-                            Username too long
+                        <div class="alert alert-danger help-block" ng-show="loginForm.email.$error.email && !loginForm.email.$pristine">
+                            Invalid Email id.
                         </div>
                         <div class="form-group">
                             <label for="password"> Password </label>
-                            <input type="password" class="form-control" name="password" ng-model="loginCtrl.password" required ng-minlength="8" ng-maxlength="25">
+                            <input type="password" class="form-control" name="password" ng-model="loginCtrl.data.password" required ng-minlength="8"
+                                ng-maxlength="25">
                         </div>
                         <div class="alert alert-danger" ng-show="loginForm.password.$error.required && !loginForm.password.$pristine">
                             Password required.
                         </div>
-                        <div class="alert alert-danger" ng-show="loginForm.password.$error.minlength">
-                            Password too short
-                        </div>
-                        <div class="alert alert-danger" ng-show="loginForm.password.$error.maxlength">
-                            Password too long
-                        </div>
-                        <button type="button" class="btn btn-success" ng-disabled="loginForm.$invalid" ng-click="loginCtrl.redirect()">
+                        <button type="button" class="btn btn-success" ng-disabled="loginForm.$invalid" ng-click="loginCtrl.authenticate()">
                             <span class="glyphicon glyphicon-lock"></span>
                             Login 
                         </button>
                     </form>
+                    <br/>
+                    <div class="alert alert-success" ng-if="loginCtrl.status == true">
+                        {{ loginCtrl.message }} 
+                    </div>
+                    <div class="alert alert-danger" ng-if="loginCtrl.status == false">
+                        {{ loginCtrl.message }}
+                    </div>
                 </div>
                 <div class="panel-footer">
                     <div class="row">
