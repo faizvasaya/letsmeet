@@ -21,7 +21,7 @@ module.exports = function (router) {
                 } else {
                     res.json({
                         success: true,
-                        message: 'Signedup successfully'
+                        message: 'Signed up successfully'
                     });
                 }
             });
