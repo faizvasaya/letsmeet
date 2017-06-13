@@ -9,7 +9,7 @@
                     <form name="signupForm" novalidate>
                         <div class="form-group">
                             <label for="name"> Name </label>
-                            <input type="text" class="form-control" name="name" ng-model="signupCtrl.name" required ng-minlength="3" ng-maxlength="15">
+                            <input type="text" class="form-control" name="name" ng-model="signupCtrl.data.name" required ng-minlength="3" ng-maxlength="15">
                         </div>
                         <div class="alert alert-danger help-block" ng-show="signupForm.name.$error.required && !signupForm.name.$pristine">
                             Name required.
@@ -22,7 +22,7 @@
                         </div>
                         <div class="form-group">
                             <label for="email"> Email </label>
-                            <input type="email" class="form-control" name="email" ng-model="signupCtrl.email" required>
+                            <input type="email" class="form-control" name="email" ng-model="signupCtrl.data.email" required>
                         </div>
                         <div class="alert alert-danger help-block" ng-show="signupForm.email.$error.required && !signupForm.email.$pristine">
                             Email required.
@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                             <label for="password"> Password </label>
-                            <input type="password" class="form-control" name="password" ng-model="signupCtrl.password" required ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/">
+                            <input type="password" class="form-control" name="password" ng-model="signupCtrl.data.password" required ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/">
                         </div>
                         <div class="alert alert-danger" ng-show="signupForm.password.$error.required && !signupForm.password.$pristine">
                             Password required.
@@ -41,13 +41,20 @@
                             Password too long
                         </div>
                         <div class="alert alert-danger" ng-show="signupForm.password.$error.pattern">
-                            Password should contain atleast one character, one number and one special character
+                            Password should be of atleast 8 characters and contain atleast one character, one number and one special character
                         </div>
-                        <button type="button" class="btn btn-success" ng-disabled="signupForm.$invalid" ng-click="signupCtrl.redirect()">
+                        <button type="button" class="btn btn-success" ng-disabled="signupForm.$invalid" ng-click="signupCtrl.signup()">
                             <span class="glyphicon glyphicon-lock"></span>
                             Signup 
                         </button>
                     </form>
+                    <br/>
+                    <div class="alert alert-success" ng-if="signupCtrl.status == true">
+                        {{ signupCtrl.message }} You can now <a href="#!login">login</a> to complete your profile.
+                    </div>
+                    <div class="alert alert-danger" ng-if="signupCtrl.status == false">
+                        {{ signupCtrl.message }}
+                    </div>
                 </div>
                 <div class="panel-footer">
                     <div class="row">
