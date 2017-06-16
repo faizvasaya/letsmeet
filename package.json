@@ -18,6 +18,13 @@
   "homepage": "https://github.com/faizvasaya/letsmeet#readme",
   "devDependencies": {
     "bower": "^1.8.0",
+    "gulp": "^3.9.1",
+    "gulp-coffee": "^2.3.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
     "jasmine-core": "^2.6.2",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.1.1",
