@@ -1,3 +1,4 @@
+//Controller to for /login route
 (function () {
     var app = angular.module('app');
 
@@ -8,29 +9,30 @@
     function LoginController($scope, $location, authenticationService) {
         var vm = this;
 
-        vm.redirect = redirect;
         vm.authenticate = authenticate;
         vm.authenticateUsingGoogle = authenticateUsingGoogle;
         vm.authenticateUsingFacebook = authenticateUsingFacebook;
 
-        function redirect() {
-            $location.path('/homepage');
-        }
-
-        function authenticate(){
+        /**
+         * @desc Authenticates a user by invoking authenticationService's authenticate method. It also
+         *       handles the success and error of the request by using correspoding callbacks.
+         */
+        function authenticate() {
             var authPromise = authenticationService.authenticate(vm.data);
-            authPromise.then(function(response) {
-                 vm.message= response.data.message;
-                 vm.status = response.data.success;
-            }, function(error) {
-                vm.message= response.data.message;
+            authPromise.then(function (response) {
+                vm.message = response.data.message;
+                vm.status = response.data.success;
+            }, function (error) {
+                vm.message = response.data.message;
                 vm.status = response.data.success;
             });
         }
 
+        //********To be implemented********
         function authenticateUsingGoogle() {
             authenticationService.google();
         }
+        //********To be implemented********
         function authenticateUsingFacebook() {
             authenticationService.facebook();
         }

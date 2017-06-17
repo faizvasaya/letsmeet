@@ -1,7 +1,7 @@
 /**
  * @author Faizal Vasaya
  * @date 6/8/2017
- * @desc Angular module to initialize the application.
+ * @desc Initializing the application by creating a module.
  */
 (function () {
     var app = angular.module("app", ["ngRoute"]);
